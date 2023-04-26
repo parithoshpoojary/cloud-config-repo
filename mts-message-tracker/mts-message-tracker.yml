@@ -1,5 +1,12 @@
+spring:
+  profiles: dev
+
 server:
   port: 8081
+
+logging:
+  level:
+    root: WARN
 
 eureka:
   client:
@@ -11,3 +18,12 @@ eureka:
       hostname: localhost
     healthcheck:
       enabled: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
